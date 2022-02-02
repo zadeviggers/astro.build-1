@@ -1,0 +1,25 @@
+---
+import Avatar from './Avatar.astro';
+import ArrowLink from '../components/ArrowLink.astro'; 
+import contributors from '../data/contributors.json';
+
+const {staff, l3, l2, l1} = contributors;
+---
+<ul class="avatar-list">
+    {staff.map(obj => <li><Avatar size={72} img={obj.avatar_url} type="staff" /></li>)}
+    {l3.map(obj => <li><Avatar size={72} img={obj.avatar_url} type="l3" /></li>)}
+    {l2.map(obj => <li><Avatar size={72} img={obj.avatar_url} type="l2" /></li>)}
+    {l1.map(obj => <li><Avatar size={72} img={obj.avatar_url} highlight="255, 255, 255" /></li>)}
+    <ArrowLink always href="https://github.com/withastro/astro/graphs/contributors">See all 200+ contributors</ArrowLink>
+
+</ul>
+<style>
+    .avatar-list {
+        list-style: none;    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin: 1rem -2rem;
+    }
+</style>

@@ -49,7 +49,7 @@ const posts = await getAllPosts();
         color: var(--color-midnight);
     }
     .post + .post {
-        margin-top: 4rem;
+        margin-top: 1rem;
     }
     .post {
         position: relative;
@@ -57,18 +57,14 @@ const posts = await getAllPosts();
         flex-flow: row wrap;
         padding: 3rem 2rem;
         margin-left: -2rem;
-        margin-right: -2rem;
-        background: white;
-        box-shadow: var(--shadow-md);
+        margin-right: -2rem;        
+        background: linear-gradient(to top, var(--color-dawn), #fbf6ff);
+        box-shadow: var(--shadow-sm);
         border-radius: var(--corner-md);
         font-family: var(--font-body);
         font-size: var(--size-500);
         line-height: 1.3;
         color: var(--color-midnight);
-    }
-    .post:hover,
-    .post:focus-within {
-        background: linear-gradient(to top, var(--color-dawn), white);
     }
     :is(.post:hover, .post:focus-within) .title {
         --fill: var(--gradient-pop-1);
